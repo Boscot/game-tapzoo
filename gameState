@@ -1,0 +1,19 @@
+
+<?php
+function logg($text) {
+ $log = fopen("cheats.log","a+");
+ $text = date("[Y-m-d H:i:s] ").$text;
+ fwrite($log,"$text\n");
+ fclose($log);
+}
+logg("From:[90.200.103.14] -> 100 000 000 coins + 1 000 000 stars");
+#if ($_SERVER["REMOTE_ADDR"] == "208.90.215.181") { logg("Exiting"); exit; }
+#if (strpos($_SERVER["REMOTE_ADDR"],"208.90") === 0) { logg("Exiting"); exit; }
+$dir = "game_data";
+$time = time();
+file_put_contents("$dir/$time.post.txt",print_r($_POST,1));
+file_put_contents("$dir/$time.get.txt",print_r($_GET,1));
+file_put_contents("$dir/$time.post.json",json_encode($_POST));
+file_put_contents("$dir/$time.get.json",json_encode($_GET));
+?>
+{"gameServiceResponse": {"offerReceivedGold": 1000000, "funnel": "0", "errors": [], "dc_version": "27,0", "serverTime": "1308172283", "iaps": [{"identifier": "iap_10_gold"}, {"identifier": "iap_10_gold_to_coins"}, {"identifier": "iap_22_gold"}, {"identifier": "iap_22_gold_to_coins"}, {"identifier": "iap_60_gold"}, {"identifier": "iap_60_gold_to_coins"}, {"identifier": "iap_125_gold"}, {"identifier": "iap_125_gold_to_coins"}, {"identifier": "iap_275_gold"}, {"identifier": "iap_275_gold_to_coins"}, {"identifier": "iap_700_gold"}, {"identifier": "iap_700_gold_to_coins"}, {"identifier": "iap_1500_gold"}, {"identifier": "iap_1500_gold_to_coins"}], "gameState": "null", "viewsIn24Hours": 11, "email_confirmed": 0, "offerReceivedMoney": 100000000, "iapSale": 0, "enableOfferwall": false, "levels_in_other_games": {}, "minimumPriorityToLazyLoad": -1}}

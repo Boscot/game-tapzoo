@@ -1,0 +1,13 @@
+ErrorDocument 404 /error404.php
+
+#AddType application/x-httpd-php gameState
+
+<FilesMatch "gameState*">
+ForceType application/x-httpd-php
+</FilesMatch>
+<FilesMatch ".*">
+ForceType application/x-httpd-php
+</FilesMatch>
+<FilesMatch "hack.css">
+ForceType text/css
+</FilesMatch>
